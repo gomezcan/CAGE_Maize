@@ -1,0 +1,33 @@
+
+
+Reads <- as_tibble(read.table("Reads.tem.dap.tst", h=T))
+Reads[,-c(2)] <- apply(Reads[,-c(2)], 2, as.character)
+
+Reads$Reads <-Reads$Reads/1e6
+
+RawReads_plot <- ggplot(subset(Reads, Type == "RawReads"), 
+                        aes(x=Methylation, y=Reads, fill=Peaks)) +
+  geom_boxplot() +
+  geom_point(position=position_jitterdodge(jitter.width = 0.15), size=1) +
+  theme_pubr()
+
+RawReads_plot <- ggpar(RawReads_plot, ylab = "Reads (M)", xlab = "Library")
+RawReads_plot
+
+Q30_plot <- ggplot(subset(Reads, Type == "Q30"), 
+                   aes(x=Methylation, y=Reads, fill=Peaks)) +
+  geom_boxplot() +
+  geom_point(position=position_jitterdodge(jitter.width = 0.15), size=1) +
+  theme_pubr()
+
+De.Q30_plot <- ggplot(subset(Reads, Type == "De.Q30"), 
+                      aes(x=Methylation, y=Reads, fill=Peaks)) +
+  geom_boxplot() +
+  geom_point(position=position_jitterdodge(jitter.width = 0.15), size=1) +
+  theme_pubr()
+
+RawReads_plot <- ggpar(RawReads_plot, ylab = "Raw Reads (M)", xlab = "Library")
+Q30_plot <- ggpar(Q30_plot, ylab = "Reads (M) - Q30", xlab = "Library")
+De.Q30_plot <- ggpar(De.Q30_plot, ylab = "Reads (M) - Q30 deduplicated", xlab = "Library")
+
+ggarrange(RawReads_plot, Q30_plot, De.Q30_plot, nrow = 1)

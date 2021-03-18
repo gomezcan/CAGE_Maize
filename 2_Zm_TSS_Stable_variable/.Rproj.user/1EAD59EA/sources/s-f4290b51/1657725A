@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1611846605370.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "1657725A",
+    "lastKnownWriteTime" : 1611920089,
+    "last_content_update" : 1611920089992,
+    "path" : "~/Projects/CAGE_Maize/2_Zm_TSS_Stable_variable/Exploratory_analysis.R",
+    "project_path" : "Exploratory_analysis.R",
+    "properties" : {
+        "cursorPosition" : "13,44",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
